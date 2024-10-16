@@ -1,0 +1,603 @@
+/* Estilos básicos para el cuerpo y la tipografía */
+
+body {
+    background-color: #161616;
+    font-family: 'Orbitron', sans-serif;    
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del encabezado */
+header {
+    background: url(/Imagenes/abstract-1891289_1920.jpg);
+    background: linear-gradient(#055);
+    width: 100%;
+    color: white;
+    text-align: center;
+    z-index: 100;
+}
+
+
+.header-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 1200px; /* Limita el ancho máximo del header */
+    margin: 0 auto; /* Centra el header */
+    padding: 0 20px; /* Agrega padding horizontal */
+}
+
+
+.logo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+}
+
+
+.title-logo {
+    font-size: 30px;
+    margin-left: 300px;
+}
+
+
+.search-bar {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    .title-logo {
+        display: none; /* Oculta el logo en pantallas pequeñas */
+    }
+
+    .search-bar {
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        width: 100%; /* Ocupa todo el ancho */
+        margin-top: 20px; /* Espacio superior, ajustable */
+    }
+
+    .input-buscar {
+        width: 70%; /* Ajusta el ancho del campo de búsqueda */
+    }
+
+    .input-button {
+        padding: 10px; /* Ajusta el padding del botón */
+    }
+}
+
+
+
+.input-buscar {
+    background-color: #f4f4f4;
+    color: #f4f4f4;
+    width: 170px;
+    border-radius: 5px 0 0 5px;
+    padding: 5px 10px;
+
+}
+
+
+.input-button {
+    background-color: rgb(255, 0, 0);
+    color: #f4f4f4;
+    border-radius: 0 5px 5px 0;
+    padding: 5px 10px;
+}
+
+
+.navegacion {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten */
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra más sutil */
+}
+
+
+/* Estilos para el menú hamburguesa */
+.menu-toggle {
+    display: none; /* Ocultar por defecto */
+    flex-direction: column;
+    justify-content: start;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: #fff; /* Cambia el color de las barras según tu diseño */
+    margin: 3px 0;
+}
+
+/* Muestra el menú hamburguesa en pantallas pequeñas */
+@media (max-width: 1200px) {
+    .nav {
+        position: relative; /* Asegúrate de que la posición sea relativa */
+    }
+
+    .menu {
+        display: flex; /* Mostrar el menú */
+        flex-direction: column;
+        width: 100%; /* Ancho completo */
+        background-color: #161616; /* Color de fondo del menú */
+        position: absolute; /* Posición absoluta */
+        top: 60px; /* Ajusta la posición según el tamaño de tu barra de navegación */
+        left : -100%; /* Comienza fuera de la pantalla */
+        transition: left 0.3s ease; /* Transición suave */
+    }
+
+    .menu.active {
+        left: 0; /* Desplazarse hacia la izquierda para mostrar el menú */
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostrar el botón de menú hamburguesa */
+        justify-content: start;
+    }
+}
+
+.nav {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+}
+
+
+/* Estilos para la barra de menú */
+.navegacion .nav .menu {
+    background-color: #161616;
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around; /* Espacio igual entre los elementos */
+    text-align: center;
+}
+
+/* Estilos para cada elemento de la barra de menú */
+.navegacion .nav .menu li {
+    flex-grow: 1; /* Hace que cada elemento ocupe el mismo espacio */
+    align-items: center;
+}
+
+/* Estilos para los enlaces del menú */
+.navegacion .nav .menu li a {
+    color: rgb(255,0,0);
+    text-decoration: none; /* Elimina el subrayado */
+    font-weight: bold;
+    padding: 15px 0; /* Espacio superior e inferior dentro del enlace */
+    display: block; /* Hace que el enlace ocupe todo el espacio del 'li' */
+    text-align: center; /* Centra el texto dentro de cada enlace */
+    transition: background-color 0.3s ease;
+}
+
+/* Cambio de color al pasar el mouse sobre los enlaces */
+.navegacion .nav .menu li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+    text-shadow: 
+                0 0 5px rgb(255,0,0),  /* Primer nivel de sombra cercano */
+                0 0 10px rgb(255,0,0), /* Sombra intermedia */
+                0 0 20px rgb(255,0,0), /* Sombra más brillante */
+                0 0 40px rgb(255,0,0), /* Halo extendido */
+                0 0 80px rgb(255,0,0); /* Luz intensa extendida */
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.content-wrapper {
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1200px; /* Limita el ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Sombra más sutil */
+    border: none; /* Elimina el borde si no es necesario */
+    box-sizing: border-box;
+}
+
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
+        width: 100%; /* Utiliza todo el ancho */
+    }
+
+    .conter__boxes, .content-youtube {
+        flex-basis: 100%; /* Cada uno toma el 100% en pantallas pequeñas */
+        /* Ajusta el padding/margin si es necesario */
+    }
+}
+
+
+
+
+
+
+
+
+.conter__boxes {
+    display: flex;
+    justify-content: center;
+    flex-basis: 40%; /* Toma el 100% en pantallas pequeñas */
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.tituloCaja{
+    padding: 30px;  
+    padding-bottom: 0;
+}
+
+
+.boxes {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  /*border: 1px solid yellow;*/
+    box-sizing: border-box;
+}
+
+
+.boxes::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Posiciona el borde en la parte inferior */
+    right: 5%; /* Margen desde la izquierda, ajustable */
+    width: 90%; /* El ancho del borde (ajústalo a tu preferencia) */
+    overflow: 1px; /* Grosor del borde */
+    background-color: #818181; /* Color del borde */
+    box-sizing: border-box;
+}
+
+
+
+
+.box-news {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 220px;
+    padding: 15px;
+/*  border: 1px solid blue;*/
+    box-sizing: border-box;
+}
+
+
+.box-news::after {
+    content: '';
+    position: absolute;
+    bottom: 0; /* Posiciona el borde en la parte inferior */
+    /*left: 10%; /* Margen desde la izquierda, ajustable */
+    width: 90%; /* El ancho del borde (ajústalo a tu preferencia) */
+    height: 1px; /* Grosor del borde */
+    background-color: #818181; /* Color del borde */
+}
+
+
+.box-news:hover {
+    cursor: pointer;
+}
+
+.title-news {
+    font-size: 0.8rem;
+    color: red;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+
+.box-wrapper {
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    box-sizing: border-box;
+ /* border: 1px solid red;*/
+    
+}
+ 
+.box-text {
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    padding: 15px;
+    box-sizing: border-box;
+ /* border: 1px solid black;*/
+}
+
+
+.box-temp {
+    display: flex;
+    justify-content: start;
+    height: 30%;
+    align-items: center;
+    box-sizing: border-box;
+/*  border: 1px solid blue;*/
+
+    
+}
+
+
+.box-img {
+    display: flex;
+    box-sizing: border-box;
+    padding: 15px;
+    width: 50%;
+}
+
+
+.img {
+    display: flex;
+    justify-content: center;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+
+.titulo-videos {
+    color: #f4f4f4;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+
+/*   YOUTUBE BOX   */
+
+.content-youtube {
+    display: flex;
+    justify-content: center;
+    flex-basis: 20%;
+    min-width: 200px;
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 15px 15px 15px 0;
+
+}
+.youtube {
+    background-color: #161616;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid blue;
+
+}
+
+
+.youtube-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 1px solid blue;
+}
+
+.titulo-videos {
+    font-size: 22px;
+    border: 1px solid blue;
+}
+
+.youtubeVideo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 170px;
+    margin: 15px;  
+    box-sizing: border-box;
+    border: 1px solid yellow;
+}
+    
+
+.video {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+.poro {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+
+
+
+.img {
+    justify-content: center;
+    align-items: center;
+    max-width: 100%; /* Asegura que no excedan el contenedor */
+    height: auto; /* Mantiene la proporción de aspecto */
+}
+
+/*    FOOTER    */
+
+footer {
+    background-color: #161616;
+    width: 100%;
+    color: #fff;
+    display: flex;  
+    flex-direction: column;
+    z-index: 100;
+}
+
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos dentro de la columna */
+    width: 100%;
+    padding: 20px 0; /* Agrega padding vertical */
+}
+
+
+.footer-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.footer-flex-direction {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+
+}
+
+
+.footer-container {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    width: 30%;
+}
+
+
+.footer-interaction {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+    margin-top: 0;
+}
+
+
+.footer-box {
+    display: flex;
+    width: 100%;
+    padding: 25px;
+}
+
+
+.footer-inside  {
+    padding: 20px;
+    font-size: 12px;
+
+}
+
+
+.ligth-green {
+    color: rgb(255, 0, 0);
+} 
+
+.ligth-green:hover{
+
+    text-shadow: 0 0 5px rgb(255, 0, 0),  /* Primer nivel de sombra cercano */
+                 0 0 10px rgb(255, 0, 0), /* Sombra intermedia */
+                 0 0 20px rgb(255, 0, 0), /* Sombra más brillante */
+                 0 0 40px rgb(255, 0, 0), /* Halo extendido */
+                 0 0 80px rgb(255, 0, 0); /* Luz intensa extendida */
+            }
+
+
+.footer-link {
+    text-decoration: none;
+    color: #f4f4f4;
+}
+
+
+.subscription {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #161616;
+}
+
+.subscribe-button {
+    background-color: rgb(255, 0, 0); /* Color del botón */
+    color: #f4f4f4;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.subscribe-button:hover {
+    background-color: #005ea6; /* Color al pasar el ratón */
+}
+
+.linea {
+    width: 65%;
+    margin: auto;
+}
+
+
+
+
+
+.donacion {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.donate-button {
+    background-color: red; /* Color de fondo de PayPal */
+    color: white;
+    padding: 10px 180px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.donate-button:hover {
+    box-shadow: 0 0  5px rgb(255, 0, 0),  /* Primer nivel de sombra cercano */
+                0 0 10px rgb(255, 0, 0), /* Sombra intermedia */
+                0 0 20px rgb(255, 0, 0), /* Sombra más brillante */
+                0 0 40px rgb(255, 0, 0), /* Halo extendido */
+                0 0 80px rgb(255, 0, 0); /* Luz intensa extendida */
+}
+
+.copyrigth {
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0;
+    padding: 50px 0;
+    padding-bottom: 80px;
+}
+
+
+.enlace-dr {
+    text-decoration: none;
+}
